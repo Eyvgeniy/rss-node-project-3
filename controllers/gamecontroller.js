@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
       });
     },
 
-    function findFail(err) {
+    function findFail() {
       res.status(500).json({
         message: 'Data not found.',
       });
