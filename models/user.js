@@ -1,26 +1,31 @@
-module.exports = function(sequelize, DataTypes) {
-    return sequelize.define('user', {
-        full_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+import Sequelize from 'sequelize';
+import db from '../db.js';
 
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+const createUserModel = function (sequelize, DataTypes) {
+  return sequelize.define('user', {
+    full_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-        passwordHash: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                isEmail: true
-            }
-        }
-    })
-}
+    passwordHash: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true,
+      },
+    },
+  });
+};
+
+export default createUserModel(db, Sequelize.DataTypes);

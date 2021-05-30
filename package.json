@@ -6,15 +6,17 @@
   "scripts": {
     "start": "nodemon app.js"
   },
+  "type": "module",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.3.0",
-    "pg": "^7.6.0",
+    "pg": "^8.6.0",
     "sequelize": "^4.41.0"
   },
   "devDependencies": {
+    "eslint": "^7.27.0",
     "nodemon": "^1.18.5"
   }
 }
